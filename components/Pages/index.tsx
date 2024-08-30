@@ -59,19 +59,6 @@ const Page: PageEl = (props, state:
         }}>
 
 
-        <f-cc >
-          <f-15>books name: </f-15>
-          <sp-2 />
-          <f-15>{state.book.title}</f-15>
-        </f-cc>
-
-        <f-cc>
-          <sp-2 />
-          <f-15>price:</f-15>
-          <f-15>{state.book.price}</f-15>
-
-        </f-cc>
-
         <f-cc>
           <f-15>writer:</f-15>
           <sp-2 />
@@ -98,7 +85,7 @@ const Page: PageEl = (props, state:
 
         <g-b style={{
           backgroundColor:
-            state.cart.includes(state.book.title) ? "#B804046F" : " #04B855A0"
+            state.cart.includes(state.book.title) ? "#B804046F" : " #9AC1ACC7"
         }} onClick={() => {
 
           if (state.cart.includes(state.book .title))
@@ -117,8 +104,26 @@ const Page: PageEl = (props, state:
 
         }}>
           {state.cart.includes(state.book.title) ? <img style= {{width:10, height:10, objectFit:"contain"}}  src ="https://irmapserver.ir/research/25/x-markk.jpg"> <f-13 > 
-            Remove</f-13></img> : <f-13>Add to cart</f-13>}
+             Remove</f-13></img> :  <f-13>Add to cart</f-13>} 
         </g-b>
+
+        <br-x/>
+
+        <g-b style={{backgroundColor: "#FDFFFEAB"}} onClick={()=>{
+          if(!state.faves)
+            {
+              state.faves = []
+            }
+            state.faves.push(state.book.title)
+            state.form = null
+            refresh()
+          
+        }}>
+          <img src={state.cart.includes(state.book.title) ?
+            "https://irmapserver.ir/research/25/iconsfavorite.png" :
+            "https://irmapserver.ir/research/25/icons8-favorite.png"} style={{ width: 25, height:25 , objectFit: "contain", margin: "5px 10px", position: "absolute", left:0 }}></img>
+
+        </g-b >
 
 
 
@@ -126,16 +131,42 @@ const Page: PageEl = (props, state:
 
 
       <Window title="Your cart"  style={{margin: 10, width: "calc(100% - 20px)"}}>
-        <f-cse style={{width:"100%", height:60}}>
-          <f-15 style={{fontFamily:"seriff"}}>Total price:<sp-3/>{total_price}</f-15>
-        
-          {state.cart.length >1 ?<f-17 style={{fontFamily:"seriff"}}> you have {state.cart.length} items in your cart</f-17>: <f-17  style={{fontFamily:"seriff"}}>you have {state.cart.length} item in your cart</f-17> }
+        <f-cse style={{width:"100%", height:75}}>
 
+        <f-cse style={{ height:60 , width: 300, borderRadius: 10, backgroundColor: "#F7F7F77E", margin: "10px"}}>
+
+
+
+        <img src ="https://irmapserver.ir/research/25/book.png"    style={{width:55, height:55, objectFit:"contain"}}>
+        
+        </img>
+
+        {state.cart.length >1 ?<f-17 style={{fontFamily:"seriff"}}> You have {state.cart.length} items in your cart</f-17>: <f-17  style={{fontFamily:"seriff"}}>You have {state.cart.length} item in your cart</f-17> }
+
+        </f-cse>
+
+
+        
+          {/* {state.cart.length >1 ?<f-17 style={{fontFamily:"seriff"}}> You have {state.cart.length} items in your cart</f-17>: <f-17  style={{fontFamily:"seriff"}}>You have {state.cart.length} item in your cart</f-17> } */}
+
+          <f-cse style={{ height:60 , width: 300, borderRadius: 10, backgroundColor: "#F7F7F77E", margin: "10px"}}>
+
+
+          <img src ="https://irmapserver.ir/research/25/payment.png"  style={{width:52, height:52, objectFit:"contain", marginTop:6}}></img>
+        
+
+          <f-17 style={{fontFamily:"seriff"}}>Total price:<sp-3/>{total_price}</f-17>
+
+          </f-cse>
+
+          
+
+          
         </f-cse>
       </Window>
 
 
-      <Window title={"welcom"}
+      <Window title={"welcome"}
         style={{ minHeight: 200, margin: 10, width: "calc(100% - 20px)" }}>
         {/* <pre style={{ direction: "ltr" }}>{JSON.stringify(props, null, 2)}</pre>
          */}
