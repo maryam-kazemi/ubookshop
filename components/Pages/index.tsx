@@ -23,8 +23,8 @@ const Page: PageEl = (props, state:
       language: string, pages: number,
 
     },
-    cart: Array<string>
-
+    cart: Array<string>,
+    faves: Array<string>
   }, refresh, getProps) => {
 
   let styles = global.styles
@@ -36,6 +36,9 @@ const Page: PageEl = (props, state:
   }
 
 
+if(!state.faves){
+    state.faves = []
+  }
 
   for(let title of state.cart){
     let book = props.books.find(b=> b.title == title)
@@ -103,8 +106,7 @@ const Page: PageEl = (props, state:
 
 
         }}>
-          {state.cart.includes(state.book.title) ? <img style= {{width:10, height:10, objectFit:"contain"}}  src ="https://irmapserver.ir/research/25/x-markk.jpg"> <f-13 > 
-             Remove</f-13></img> :  <f-13>Add to cart</f-13>} 
+          {state.cart.includes(state.book.title) ?  <f-14 > Remove</f-14> :  <f-13>Add to cart</f-13>} 
         </g-b>
 
         <br-x/>
@@ -119,9 +121,11 @@ const Page: PageEl = (props, state:
             refresh()
           
         }}>
-          <img src={state.cart.includes(state.book.title) ?
-            "https://irmapserver.ir/research/25/iconsfavorite.png" :
-            "https://irmapserver.ir/research/25/icons8-favorite.png"} style={{ width: 25, height:25 , objectFit: "contain", margin: "5px 10px", position: "absolute", left:0 }}></img>
+          <f-14>Add to favorite</f-14>
+          {/* <img src={state.cart.includes(state.book.title) ? */}
+            {/* "https://irmapserver.ir/research/25/iconsfavorite.png" : */}
+            {/* "https://irmapserver.ir/research/25/icons8-favorite.png"} style={{ width: 25, height:25 , objectFit: "contain", margin: "5px 10px" }}></img> */}
+            
 
         </g-b >
 
