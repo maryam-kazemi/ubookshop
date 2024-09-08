@@ -89,19 +89,21 @@ if(!state.faves){
         <g-b style={{
           backgroundColor:
             state.cart.includes(state.book.title) ? "#B804046F" : " #9AC1ACC7"
-        }} onClick={() => {
+        }} onClick={async () => {
 
           if (state.cart.includes(state.book .title))
           {
             state.cart = state.cart.filter(bookname=> state.book.title != bookname)
             state.form = null
           refresh()
+          await api("/api/test", state.cart)
 
           }
           else{
             state.cart.push(state.book.title)
           state.form = null
           refresh()
+          
           }
 
 
@@ -112,16 +114,21 @@ if(!state.faves){
         <br-x/>
 
         <g-b style={{backgroundColor: "#FDFFFEAB"}} onClick={()=>{
-          if(!state.faves)
+          if(state.faves.includes(state.book.title))
             {
-              state.faves = []
+              state.faves = state.faves.filter(bookname=> state.book.title != bookname)
+              state.form = null
+          refresh()
             }
+            else
+            {
             state.faves.push(state.book.title)
             state.form = null
             refresh()
+            }
           
         }}>
-          <f-14>Add to favorite</f-14>
+          {state.faves.includes(state.book.title)?<f-14> <img src="https://cdn.ituring.ir/research/25/%21heart.png" style={{height:32, marginTop:"8px" }}/></f-14> : <f-14> <img src="https://cdn.ituring.ir/research/25/b.fave.png" style={{height:32, marginTop:"8px", objectFit:"contain"}}/></f-14> }
           {/* <img src={state.cart.includes(state.book.title) ? */}
             {/* "https://cdn.ituring.ir/research/25/iconsfavorite.png" : */}
             {/* "https://cdn.ituring.ir/research/25/icons8-favorite.png"} style={{ width: 25, height:25 , objectFit: "contain", margin: "5px 10px" }}></img> */}
@@ -209,7 +216,7 @@ export async function getServerSideProps(context) {
     props: {
       data: global.QSON.stringify({
         session,
-        books
+        books,
         // nlangs,
       })
     },
