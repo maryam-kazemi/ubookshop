@@ -25,7 +25,7 @@ return <>
     <span style={{color:"#452700", fontSize:12, fontWeight:600}}>{props.text}</span>
     <div id={"dropdown_title_"+ props.id} style={{transition:"all 0.3s ease-out", position:"absolute", right:10, paddingTop:1, 
     transform:props.state!="open"?null:"rotate(180deg)"}}>
-      <img src ={"https://irmapserver.ir/qepal/down2.svg"} alt="received transaction count" style={{width:10, height:10}}/> </div>
+      <img src ={"https://cdn.ituring.ir/qepal/down2.svg"} alt="received transaction count" style={{width:10, height:10}}/> </div>
   </div>
 
 

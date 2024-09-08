@@ -123,8 +123,8 @@ if(!state.faves){
         }}>
           <f-14>Add to favorite</f-14>
           {/* <img src={state.cart.includes(state.book.title) ? */}
-            {/* "https://irmapserver.ir/research/25/iconsfavorite.png" : */}
-            {/* "https://irmapserver.ir/research/25/icons8-favorite.png"} style={{ width: 25, height:25 , objectFit: "contain", margin: "5px 10px" }}></img> */}
+            {/* "https://cdn.ituring.ir/research/25/iconsfavorite.png" : */}
+            {/* "https://cdn.ituring.ir/research/25/icons8-favorite.png"} style={{ width: 25, height:25 , objectFit: "contain", margin: "5px 10px" }}></img> */}
             
 
         </g-b >
@@ -141,7 +141,7 @@ if(!state.faves){
 
 
 
-        <img src ="https://irmapserver.ir/research/25/book.png"    style={{width:55, height:55, objectFit:"contain"}}>
+        <img src ="https://cdn.ituring.ir/research/25/book.png"    style={{width:55, height:55, objectFit:"contain"}}>
         
         </img>
 
@@ -156,7 +156,7 @@ if(!state.faves){
           <f-cse style={{ height:60 , width: 300, borderRadius: 10, backgroundColor: "#F7F7F77E", margin: "10px"}}>
 
 
-          <img src ="https://irmapserver.ir/research/25/payment.png"  style={{width:52, height:52, objectFit:"contain", marginTop:6}}></img>
+          <img src ="https://cdn.ituring.ir/research/25/payment.png"  style={{width:52, height:52, objectFit:"contain", marginTop:6}}></img>
         
 
           <f-17 style={{fontFamily:"seriff"}}>Total price:<sp-3/>{total_price}</f-17>
@@ -201,7 +201,7 @@ export async function getServerSideProps(context) {
   let books = await global.db.collection("books").find({}).toArray()
 
   for (let book of books) {
-    book.imageLink = "https://irmapserver.ir/research/ex/books/" + book.imageLink
+    book.imageLink = "https://cdn.ituring.ir/research/ex/books/" + book.imageLink
   }
 
   console.log(books)

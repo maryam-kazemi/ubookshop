@@ -11,7 +11,7 @@ export default {
         return "/"
     },
 
-    sitefiles:"https://irmapserver.ir/userv",
+    sitefiles:"https://cdn.ituring.ir/userv",
     defaultFont:"Segoe UI, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,\
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif",
     address:"https://1500.uservs.ir",

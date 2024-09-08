@@ -19,8 +19,8 @@ export const Block = props => {
     }}>
 
         {/* <img src={props.state.faves.includes(props.book.title) ? */}
-            {/* "https://irmapserver.ir/research/25/iconsfavorite.png" : */}
-            {/* "https://irmapserver.ir/research/25/icons8-favorite.png"} style={{ width: 25, height:25 , objectFit: "contain", margin: margin, position: "absolute", left:0 }}/> */}
+            {/* "https://cdn.ituring.ir/research/25/iconsfavorite.png" : */}
+            {/* "https://cdn.ituring.ir/research/25/icons8-favorite.png"} style={{ width: 25, height:25 , objectFit: "contain", margin: margin, position: "absolute", left:0 }}/> */}
 
 
 
@@ -62,16 +62,16 @@ export const Block = props => {
             </c-x>
 
             <img src={props.state.faves.includes(props.book.title) ?
-            "https://irmapserver.ir/research/25/iconsfavorite.png" :
-            "https://irmapserver.ir/research/25/icons8-favorite.png"} style={{ width: 25, height:25 , objectFit: "contain" }}/>
+            "https://cdn.ituring.ir/research/25/iconsfavorite.png" :
+            "https://cdn.ituring.ir/research/25/icons8-favorite.png"} style={{ width: 25, height:25 , objectFit: "contain" }}/>
 
 
 
 
 
             <img src={props.state.cart.includes(props.book.title) ?
-                "https://irmapserver.ir/qepal/ok.svg" :
-                "https://irmapserver.ir/research/25/klipartz.com.png"} style={{ width: size, height: size, objectFit: "contain" }}/>
+                "https://cdn.ituring.ir/qepal/ok.svg" :
+                "https://cdn.ituring.ir/research/25/klipartz.com.png"} style={{ width: size, height: size, objectFit: "contain" }}/>
 
 
             {/* {props.state.cart.includes(props.book.title) ? */}
